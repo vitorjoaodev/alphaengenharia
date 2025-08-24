@@ -25,10 +25,16 @@ import {
   Clock,
   MessageCircle
 } from "lucide-react";
-import logoPath from "@assets/ChatGPT Image 24 de ago. de 2025, 14_27_20_1756058512982.png";
+import logoPath from "@assets/Design sem nome - 2025-08-24T151648.371_1756059411457.png";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isWhatsAppOpen, setIsWhatsAppOpen] = useState(false);
+  const [whatsAppForm, setWhatsAppForm] = useState({
+    nome: "",
+    email: ""
+  });
+  const [showWhatsAppNumber, setShowWhatsAppNumber] = useState(false);
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
@@ -71,6 +77,23 @@ export default function Home() {
     contactMutation.mutate(formData);
   };
 
+  const handleWhatsAppSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (whatsAppForm.nome && whatsAppForm.email) {
+      setShowWhatsAppNumber(true);
+    }
+  };
+
+  const openWhatsApp = () => {
+    const phoneNumber = "5511939170292";
+    const message = `Olá! Sou ${whatsAppForm.nome} (${whatsAppForm.email}). Gostaria de mais informações sobre os serviços da Alpha Prime Engenharia.`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+    setIsWhatsAppOpen(false);
+    setShowWhatsAppNumber(false);
+    setWhatsAppForm({ nome: "", email: "" });
+  };
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -95,7 +118,7 @@ export default function Home() {
               <img src={logoPath} alt="Luciane Engenharia Logo" className="w-8 h-8 object-contain" />
             </div>
             <div>
-              <h1 className="text-navy font-bold text-lg">Luciane</h1>
+              <h1 className="text-navy font-bold text-lg">Alpha Prime</h1>
               <p className="text-sm text-gray-600">ENGENHARIA</p>
             </div>
           </div>
@@ -160,13 +183,13 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center">
           {/* Large Logo Display */}
           <div className="flex justify-center mb-8">
-            <div className="w-32 h-32 bg-navy rounded-2xl flex items-center justify-center shadow-xl">
-              <img src={logoPath} alt="Luciane Engenharia" className="w-20 h-20 object-contain" />
+            <div className="w-32 h-32 bg-white rounded-2xl flex items-center justify-center shadow-xl border-2 border-navy">
+              <img src={logoPath} alt="Alpha Prime Engenharia" className="w-full h-full object-cover rounded-xl" />
             </div>
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold text-navy mb-4" data-testid="hero-title">
-            Luciane Engenharia
+            Alpha Prime Engenharia
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto" data-testid="hero-subtitle">
@@ -201,10 +224,22 @@ export default function Home() {
             <div className="w-24 h-1 bg-silver mx-auto"></div>
           </div>
           
-          <div className="max-w-4xl mx-auto">
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed text-center" data-testid="about-description">
-              A Luciane Engenharia atua com projetos estruturais, arquitetura, franquias, indústrias e consultoria, oferecendo soluções completas com foco em qualidade, prazo e inovação. Nossa equipe garante excelência técnica em todas as etapas, do planejamento à execução.
-            </p>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-lg md:text-xl text-gray-700 leading-relaxed" data-testid="about-description">
+                  A Alpha Prime Engenharia atua com projetos estruturais, arquitetura, franquias, indústrias e consultoria, oferecendo soluções completas com foco em qualidade, prazo e inovação. Nossa equipe garante excelência técnica em todas as etapas, do planejamento à execução.
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <div className="w-80 h-64 bg-gradient-to-br from-navy to-silver rounded-xl flex items-center justify-center shadow-lg">
+                  <div className="text-white text-center">
+                    <Building2 className="w-16 h-16 mx-auto mb-2 opacity-50" />
+                    <p className="text-sm opacity-75">Espaço para Foto da Equipe</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -356,6 +391,41 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section className="py-16 bg-gray-50" data-testid="gallery-section">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4" data-testid="gallery-title">Nossas Obras</h2>
+            <div className="w-24 h-1 bg-silver mx-auto"></div>
+          </div>
+          
+          <div className="flex overflow-x-auto space-x-6 pb-4" data-testid="gallery-container">
+            {[
+              { title: "Projeto Residencial", type: "Residencial" },
+              { title: "Edifício Comercial", type: "Comercial" },
+              { title: "Complexo Industrial", type: "Industrial" },
+              { title: "Franquia Fast Food", type: "Franquia" },
+              { title: "Hospital Regional", type: "Saúde" },
+              { title: "Centro Logístico", type: "Logística" }
+            ].map((project, index) => (
+              <div key={index} className="flex-shrink-0 w-80 bg-white rounded-xl shadow-lg overflow-hidden" data-testid={`gallery-item-${index}`}>
+                <div className="w-full h-48 bg-gradient-to-br from-navy to-silver flex items-center justify-center">
+                  <div className="text-white text-center">
+                    <Building2 className="w-12 h-12 mx-auto mb-2 opacity-75" />
+                    <p className="text-sm font-medium">{project.title}</p>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <span className="inline-block bg-navy text-white px-3 py-1 rounded-full text-sm font-medium">
+                    {project.type}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contato" className="py-16 bg-white" data-testid="contact-section">
         <div className="container mx-auto px-4">
@@ -462,9 +532,9 @@ export default function Home() {
                       E-mails
                     </h4>
                     <div className="text-gray-600 ml-7 space-y-1">
-                      <p><strong>Administração:</strong> administracao@lucianeengenharia.com</p>
-                      <p><strong>Recursos Humanos:</strong> rh@lucianeengenharia.com</p>
-                      <p><strong>Obras:</strong> lucianerodrigues.obras@gmail.com</p>
+                      <p><strong>Administração:</strong> administracao@alphaprimeengenharia.com</p>
+                      <p><strong>Recursos Humanos:</strong> rh@alphaprimeengenharia.com</p>
+                      <p><strong>Obras:</strong> obras@alphaprimeengenharia.com</p>
                     </div>
                   </div>
                   
@@ -517,15 +587,15 @@ export default function Home() {
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                  <img src={logoPath} alt="Luciane Engenharia" className="w-6 h-6 object-contain" />
+                  <img src={logoPath} alt="Alpha Prime Engenharia" className="w-full h-full object-cover rounded-lg" />
                 </div>
                 <div>
-                  <h3 className="text-white font-bold">Luciane</h3>
+                  <h3 className="text-white font-bold">Alpha Prime</h3>
                   <p className="text-sm text-silver">ENGENHARIA</p>
                 </div>
               </div>
               <p className="text-silver text-sm">
-                © 2025 Luciane Engenharia. Todos os direitos reservados.
+                © 2025 Alpha Prime Engenharia. Todos os direitos reservados.
               </p>
             </div>
             
@@ -584,15 +654,85 @@ export default function Home() {
       </footer>
 
       {/* Fixed WhatsApp Button */}
-      <a
-        href="https://wa.me/5511939170292?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Luciane%20Engenharia"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300 z-50"
-        data-testid="whatsapp-button"
-      >
-        <MessageCircle className="w-6 h-6" />
-      </a>
+      <div className="fixed bottom-6 right-6 z-50">
+        {!isWhatsAppOpen ? (
+          <Button
+            onClick={() => setIsWhatsAppOpen(true)}
+            className="w-16 h-16 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-all duration-300 flex items-center justify-center"
+            data-testid="whatsapp-button"
+          >
+            <MessageCircle className="w-8 h-8" />
+          </Button>
+        ) : (
+          <div className="bg-white rounded-2xl shadow-2xl p-6 w-80 border border-gray-200" data-testid="whatsapp-form">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-semibold text-navy">Fale Conosco</h3>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsWhatsAppOpen(false)}
+                className="p-1"
+                data-testid="close-whatsapp-form"
+              >
+                <X className="w-4 h-4" />
+              </Button>
+            </div>
+            
+            {!showWhatsAppNumber ? (
+              <form onSubmit={handleWhatsAppSubmit} className="space-y-4">
+                <div>
+                  <Label htmlFor="whatsapp-nome" className="text-sm font-medium text-gray-700">Nome</Label>
+                  <Input
+                    type="text"
+                    id="whatsapp-nome"
+                    value={whatsAppForm.nome}
+                    onChange={(e) => setWhatsAppForm({ ...whatsAppForm, nome: e.target.value })}
+                    required
+                    className="mt-1"
+                    data-testid="whatsapp-input-nome"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="whatsapp-email" className="text-sm font-medium text-gray-700">E-mail</Label>
+                  <Input
+                    type="email"
+                    id="whatsapp-email"
+                    value={whatsAppForm.email}
+                    onChange={(e) => setWhatsAppForm({ ...whatsAppForm, email: e.target.value })}
+                    required
+                    className="mt-1"
+                    data-testid="whatsapp-input-email"
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  className="w-full bg-green-500 hover:bg-green-600 text-white"
+                  data-testid="whatsapp-submit-button"
+                >
+                  Continuar
+                </Button>
+              </form>
+            ) : (
+              <div className="text-center space-y-4">
+                <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto">
+                  <MessageCircle className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <p className="text-gray-700 mb-2">Nosso WhatsApp:</p>
+                  <p className="text-lg font-semibold text-navy">(11) 93917-0292</p>
+                </div>
+                <Button
+                  onClick={openWhatsApp}
+                  className="w-full bg-green-500 hover:bg-green-600 text-white"
+                  data-testid="open-whatsapp-button"
+                >
+                  Abrir WhatsApp
+                </Button>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
