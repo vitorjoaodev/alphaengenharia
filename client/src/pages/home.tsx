@@ -25,7 +25,7 @@ import {
   Clock,
   MessageCircle
 } from "lucide-react";
-import logoPath from "@assets/ChatGPT Image 24 de ago. de 2025, 14_27_20_1756058065822.png";
+import logoPath from "@assets/ChatGPT Image 24 de ago. de 2025, 14_27_20_1756058512982.png";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -173,13 +173,23 @@ export default function Home() {
             Excelência técnica em engenharia e arquitetura
           </p>
           
-          <Button 
-            onClick={() => scrollToSection('contato')} 
-            className="bg-navy text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-silver hover:text-navy transition-all duration-300 shadow-lg"
-            data-testid="hero-cta-button"
-          >
-            Solicite um orçamento
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              onClick={() => scrollToSection('contato')} 
+              className="bg-navy text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-silver hover:text-navy transition-all duration-300 shadow-lg"
+              data-testid="hero-cta-button"
+            >
+              Solicite um orçamento
+            </Button>
+            <Button 
+              onClick={() => scrollToSection('sobre')} 
+              variant="outline"
+              className="border-navy text-navy px-8 py-4 rounded-xl font-semibold text-lg hover:bg-navy hover:text-white transition-all duration-300 shadow-lg"
+              data-testid="hero-saiba-mais-button"
+            >
+              Saiba mais
+            </Button>
+          </div>
         </div>
       </section>
 
