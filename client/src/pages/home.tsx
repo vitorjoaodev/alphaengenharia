@@ -224,22 +224,10 @@ export default function Home() {
             <div className="w-24 h-1 bg-silver mx-auto"></div>
           </div>
           
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <p className="text-lg md:text-xl text-gray-700 leading-relaxed" data-testid="about-description">
-                  A Alpha Prime Engenharia atua com projetos estruturais, arquitetura, franquias, indústrias e consultoria, oferecendo soluções completas com foco em qualidade, prazo e inovação. Nossa equipe garante excelência técnica em todas as etapas, do planejamento à execução.
-                </p>
-              </div>
-              <div className="flex justify-center">
-                <div className="w-80 h-64 bg-gradient-to-br from-navy to-silver rounded-xl flex items-center justify-center shadow-lg">
-                  <div className="text-white text-center">
-                    <Building2 className="w-16 h-16 mx-auto mb-2 opacity-50" />
-                    <p className="text-sm opacity-75">Espaço para Foto da Equipe</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed text-center" data-testid="about-description">
+              A Alpha Prime Engenharia atua com projetos estruturais, arquitetura, franquias, indústrias e consultoria, oferecendo soluções completas com foco em qualidade, prazo e inovação. Nossa equipe garante excelência técnica em todas as etapas, do planejamento à execução.
+            </p>
           </div>
         </div>
       </section>
