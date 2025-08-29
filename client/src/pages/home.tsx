@@ -23,21 +23,13 @@ import {
   Phone,
   MapPin,
   Clock,
-  MessageCircle,
   Shield,
-  Users,
   Settings
 } from "lucide-react";
 import logoPath from "@assets/Design sem nome - 2025-08-24T151648.371_1756059411457.png";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isWhatsAppOpen, setIsWhatsAppOpen] = useState(false);
-  const [whatsAppForm, setWhatsAppForm] = useState({
-    nome: "",
-    email: ""
-  });
-  const [showWhatsAppNumber, setShowWhatsAppNumber] = useState(false);
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
@@ -78,23 +70,6 @@ export default function Home() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     contactMutation.mutate(formData);
-  };
-
-  const handleWhatsAppSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (whatsAppForm.nome && whatsAppForm.email) {
-      setShowWhatsAppNumber(true);
-    }
-  };
-
-  const openWhatsApp = () => {
-    const phoneNumber = "5511939170292";
-    const message = `Olá! Sou ${whatsAppForm.nome} (${whatsAppForm.email}). Gostaria de mais informações sobre os serviços da Alpha Prime Engenharia.`;
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-    setIsWhatsAppOpen(false);
-    setShowWhatsAppNumber(false);
-    setWhatsAppForm({ nome: "", email: "" });
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -671,7 +646,7 @@ export default function Home() {
               <h4 className="font-semibold mb-4">Redes Sociais</h4>
               <div className="flex space-x-4">
                 <a 
-                  href="https://linkedin.com" 
+                  href="https://www.linkedin.com/company/alpha-prime-engenharia/?viewAsMember=true" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-silver rounded-full flex items-center justify-center text-navy hover:bg-white transition-colors duration-300"
@@ -681,103 +656,12 @@ export default function Home() {
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                   </svg>
                 </a>
-                <a 
-                  href="https://instagram.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-silver rounded-full flex items-center justify-center text-navy hover:bg-white transition-colors duration-300"
-                  data-testid="link-instagram"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987s11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.329-1.297L6.826 14.08c.555.555 1.329.902 2.134.902 1.715 0 3.105-1.39 3.105-3.105S10.675 8.772 8.96 8.772s-3.105 1.39-3.105 3.105c0 .805.347 1.579.902 2.134L5.151 15.69c-.807-.88-1.297-2.031-1.297-3.328 0-2.716 2.201-4.917 4.917-4.917s4.917 2.201 4.917 4.917-2.201 4.917-4.917 4.917zm9.429-8.896h-1.34v-1.34h1.34v1.34zm-1.34 2.68c0 2.716-2.201 4.917-4.917 4.917s-4.917-2.201-4.917-4.917 2.201-4.917 4.917-4.917 4.917 2.201 4.917 4.917z"/>
-                  </svg>
-                </a>
               </div>
             </div>
           </div>
         </div>
       </footer>
 
-      {/* Fixed WhatsApp Button */}
-      <div className="fixed bottom-6 right-6 z-50">
-        {!isWhatsAppOpen ? (
-          <Button
-            onClick={() => setIsWhatsAppOpen(true)}
-            className="w-16 h-16 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-all duration-300 flex items-center justify-center"
-            data-testid="whatsapp-button"
-          >
-            <MessageCircle className="w-8 h-8" />
-          </Button>
-        ) : (
-          <div className="bg-white rounded-2xl shadow-2xl p-6 w-80 border border-gray-200" data-testid="whatsapp-form">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold text-navy">Fale Conosco</h3>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsWhatsAppOpen(false)}
-                className="p-1"
-                data-testid="close-whatsapp-form"
-              >
-                <X className="w-4 h-4" />
-              </Button>
-            </div>
-            
-            {!showWhatsAppNumber ? (
-              <form onSubmit={handleWhatsAppSubmit} className="space-y-4">
-                <div>
-                  <Label htmlFor="whatsapp-nome" className="text-sm font-medium text-gray-700">Nome</Label>
-                  <Input
-                    type="text"
-                    id="whatsapp-nome"
-                    value={whatsAppForm.nome}
-                    onChange={(e) => setWhatsAppForm({ ...whatsAppForm, nome: e.target.value })}
-                    required
-                    className="mt-1"
-                    data-testid="whatsapp-input-nome"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="whatsapp-email" className="text-sm font-medium text-gray-700">E-mail</Label>
-                  <Input
-                    type="email"
-                    id="whatsapp-email"
-                    value={whatsAppForm.email}
-                    onChange={(e) => setWhatsAppForm({ ...whatsAppForm, email: e.target.value })}
-                    required
-                    className="mt-1"
-                    data-testid="whatsapp-input-email"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  className="w-full bg-green-500 hover:bg-green-600 text-white"
-                  data-testid="whatsapp-submit-button"
-                >
-                  Continuar
-                </Button>
-              </form>
-            ) : (
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto">
-                  <MessageCircle className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <p className="text-gray-700 mb-2">Nosso WhatsApp:</p>
-                  <p className="text-lg font-semibold text-navy">(11) 93917-0292</p>
-                </div>
-                <Button
-                  onClick={openWhatsApp}
-                  className="w-full bg-green-500 hover:bg-green-600 text-white"
-                  data-testid="open-whatsapp-button"
-                >
-                  Abrir WhatsApp
-                </Button>
-              </div>
-            )}
-          </div>
-        )}
-      </div>
     </div>
   );
 }
