@@ -23,7 +23,10 @@ import {
   Phone,
   MapPin,
   Clock,
-  MessageCircle
+  MessageCircle,
+  Shield,
+  Users,
+  Settings
 } from "lucide-react";
 import logoPath from "@assets/Design sem nome - 2025-08-24T151648.371_1756059411457.png";
 
@@ -137,6 +140,9 @@ export default function Home() {
             <button onClick={() => scrollToSection('setores')} className="text-gray-700 hover:text-navy transition-colors duration-300 font-medium" data-testid="nav-setores">
               Setores
             </button>
+            <button onClick={() => scrollToSection('diferenciais')} className="text-gray-700 hover:text-navy transition-colors duration-300 font-medium" data-testid="nav-diferenciais">
+              Diferenciais
+            </button>
             <button onClick={() => scrollToSection('contato')} className="text-gray-700 hover:text-navy transition-colors duration-300 font-medium" data-testid="nav-contato">
               Contato
             </button>
@@ -169,6 +175,9 @@ export default function Home() {
               </button>
               <button onClick={() => scrollToSection('setores')} className="text-gray-700 hover:text-navy transition-colors duration-300 font-medium text-left" data-testid="mobile-nav-setores">
                 Setores
+              </button>
+              <button onClick={() => scrollToSection('diferenciais')} className="text-gray-700 hover:text-navy transition-colors duration-300 font-medium text-left" data-testid="mobile-nav-diferenciais">
+                Diferenciais
               </button>
               <button onClick={() => scrollToSection('contato')} className="text-gray-700 hover:text-navy transition-colors duration-300 font-medium text-left" data-testid="mobile-nav-contato">
                 Contato
@@ -375,6 +384,51 @@ export default function Home() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Diferenciais Section */}
+      <section id="diferenciais" className="py-16 bg-gray-50" data-testid="diferenciais-section">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4" data-testid="diferenciais-title">Nossos Diferenciais</h2>
+            <div className="w-24 h-1 bg-silver mx-auto"></div>
+          </div>
+          
+          <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Diferencial 1 */}
+            <Card className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-testid="diferencial-card-obras-criticas">
+              <CardContent className="p-0 text-center">
+                <div className="w-16 h-16 bg-navy rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Shield className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-navy mb-4">Especialistas em Obras Críticas</h3>
+                <p className="text-gray-600 leading-relaxed">Realizamos projetos complexos com precisão e segurança, garantindo a integridade de instalações críticas, onde cada detalhe faz a diferença.</p>
+              </CardContent>
+            </Card>
+
+            {/* Diferencial 2 */}
+            <Card className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-testid="diferencial-card-equipe-certificada">
+              <CardContent className="p-0 text-center">
+                <div className="w-16 h-16 bg-navy rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Settings className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-navy mb-4">Equipe Certificada e Alta Tecnologia</h3>
+                <p className="text-gray-600 leading-relaxed">Nossa equipe é credenciada, treinada em NRs e equipada com EPIs completos. Utilizamos tecnologias modernas para execução eficiente, segura e conforme as normas do setor.</p>
+              </CardContent>
+            </Card>
+
+            {/* Diferencial 3 */}
+            <Card className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-testid="diferencial-card-prazos-atendimento">
+              <CardContent className="p-0 text-center">
+                <div className="w-16 h-16 bg-navy rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Clock className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-navy mb-4">Compromisso com Prazos e Atendimento Personalizado</h3>
+                <p className="text-gray-600 leading-relaxed">Cumprimos rigorosamente prazos e oferecemos atendimento dedicado, entendendo as necessidades específicas de cada cliente, garantindo tranquilidade em projetos sensíveis.</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -602,6 +656,9 @@ export default function Home() {
                 </button>
                 <button onClick={() => scrollToSection('setores')} className="text-silver hover:text-white transition-colors duration-300 block text-left" data-testid="footer-link-setores">
                   Setores
+                </button>
+                <button onClick={() => scrollToSection('diferenciais')} className="text-silver hover:text-white transition-colors duration-300 block text-left" data-testid="footer-link-diferenciais">
+                  Diferenciais
                 </button>
                 <button onClick={() => scrollToSection('contato')} className="text-silver hover:text-white transition-colors duration-300 block text-left" data-testid="footer-link-contato">
                   Contato
