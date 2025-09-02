@@ -27,6 +27,12 @@ import {
   Settings
 } from "lucide-react";
 import logoPath from "@assets/Design sem nome - 2025-08-24T151648.371_1756059411457.png";
+import residencialImg from "@assets/IMG_4762_1756773773536.jpg";
+import comercialImg from "@assets/images (23)_1756773928056.jpg";
+import industrialImg from "@assets/vista-da-planta-de-nutricao-especializada-da-danone-em-pocos-de-caldas-mg-1625683793474_v2_900x506 (1)_1756774049850.png";
+import franquiasImg from "@assets/Alguns Dos Nossos Clientes - 4_1756774772618.png";
+import corporativoImg from "@assets/Design Sem Nome - 2_1756774812770.png";
+import saudeImg from "@assets/Design Sem Nome - 3_1756774936168.png";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -333,25 +339,26 @@ export default function Home() {
       <section id="projetos" className="py-16 bg-gray-50" data-testid="projects-section">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4" data-testid="projects-title">Nossos Projetos</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4" data-testid="projects-title">Alguns dos Nossos Clientes e Projetos</h2>
             <div className="w-24 h-1 bg-silver mx-auto"></div>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Residencial", description: "Projetos residenciais com arquitetura moderna e sustentável.", testId: "project-residencial" },
-              { title: "Comercial", description: "Soluções comerciais inovadoras para diversos segmentos.", testId: "project-comercial" },
-              { title: "Industrial", description: "Projetos industriais focados em eficiência e funcionalidade.", testId: "project-industrial" },
-              { title: "Franquias", description: "Padronização e projetos para redes de franquias.", testId: "project-franquias" },
-              { title: "Corporativo", description: "Espaços corporativos modernos e funcionais.", testId: "project-corporativo" },
-              { title: "Saúde", description: "Projetos especializados para hospitais e clínicas.", testId: "project-saude" }
+              { title: "Residencial", description: "Projetos residenciais com arquitetura moderna, personalizada e funcional, pensados para unir conforto, estética e valorização do imóvel.", testId: "project-residencial", image: residencialImg },
+              { title: "Comercial", description: "Soluções de arquitetura e engenharia para ambientes comerciais modernos, com foco em eficiência e experiência do cliente.", testId: "project-comercial", image: comercialImg },
+              { title: "Industrial", description: "Projetos industriais que priorizam eficiência, segurança e funcionalidade, atendendo às demandas de cada operação. Atendemos a fábrica da Danone e grandes empresas do setor.", testId: "project-industrial", image: industrialImg },
+              { title: "Franquias", description: "Padronização e projetos para redes de franquias, garantindo eficiência e identidade.", testId: "project-franquias", image: franquiasImg },
+              { title: "Corporativo", description: "Projetos corporativos inteligentes, combinando design moderno e funcionalidade.", testId: "project-corporativo", image: corporativoImg },
+              { title: "Saúde", description: "Projetos especializados para hospitais, Santa Casas e clínicas, garantindo eficiência, segurança e funcionalidade.", testId: "project-saude", image: saudeImg }
             ].map((project, index) => (
               <Card key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-testid={project.testId}>
-                <div className="w-full h-48 bg-gradient-to-br from-navy to-silver flex items-center justify-center">
-                  <div className="text-white text-center">
-                    <Building2 className="w-16 h-16 mx-auto mb-2 opacity-50" />
-                    <p className="text-sm opacity-75">Imagem do Projeto</p>
-                  </div>
+                <div className="w-full h-48 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  />
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold text-navy mb-2">{project.title}</h3>
