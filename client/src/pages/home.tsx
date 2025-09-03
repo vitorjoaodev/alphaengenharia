@@ -31,7 +31,7 @@ import residencialImg from "@assets/IMG_4762_1756773773536.jpg";
 import comercialImg from "@assets/images (23)_1756773928056.jpg";
 import industrialImg from "@assets/vista-da-planta-de-nutricao-especializada-da-danone-em-pocos-de-caldas-mg-1625683793474_v2_900x506 (1)_1756774049850.png";
 import franquiasImg from "@assets/Alguns Dos Nossos Clientes - 4_1756774772618.png";
-import corporativoImg from "@assets/Design Sem Nome - 2_1756774812770.png";
+import corporativoImg from "@assets/Inserir um subtítulo (15)_1756922342345.png";
 import saudeImg from "@assets/Design Sem Nome - 3_1756774936168.png";
 
 export default function Home() {
@@ -41,6 +41,7 @@ export default function Home() {
     email: "",
     telefone: "",
     assunto: "",
+    empresa: "",
     mensagem: ""
   });
 
@@ -61,6 +62,7 @@ export default function Home() {
         email: "",
         telefone: "",
         assunto: "",
+        empresa: "",
         mensagem: ""
       });
     },
@@ -169,7 +171,17 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section id="inicio" className="pt-24 pb-16 bg-gradient-to-br from-white to-gray-50" data-testid="hero-section">
+      <section 
+        id="inicio" 
+        className="pt-24 pb-16 bg-gradient-to-br from-white to-gray-50 relative"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+        data-testid="hero-section"
+      >
         <div className="container mx-auto px-4 text-center">
           {/* Large Logo Display */}
           <div className="flex justify-center mb-8">
@@ -415,40 +427,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="py-16 bg-gray-50" data-testid="gallery-section">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4" data-testid="gallery-title">Nossas Obras</h2>
-            <div className="w-24 h-1 bg-silver mx-auto"></div>
-          </div>
-          
-          <div className="flex overflow-x-auto space-x-6 pb-4" data-testid="gallery-container">
-            {[
-              { title: "Projeto Residencial", type: "Residencial" },
-              { title: "Edifício Comercial", type: "Comercial" },
-              { title: "Complexo Industrial", type: "Industrial" },
-              { title: "Franquia Fast Food", type: "Franquia" },
-              { title: "Hospital Regional", type: "Saúde" },
-              { title: "Centro Logístico", type: "Logística" }
-            ].map((project, index) => (
-              <div key={index} className="flex-shrink-0 w-80 bg-white rounded-xl shadow-lg overflow-hidden" data-testid={`gallery-item-${index}`}>
-                <div className="w-full h-48 bg-gradient-to-br from-navy to-silver flex items-center justify-center">
-                  <div className="text-white text-center">
-                    <Building2 className="w-12 h-12 mx-auto mb-2 opacity-75" />
-                    <p className="text-sm font-medium">{project.title}</p>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <span className="inline-block bg-navy text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {project.type}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Contact Section */}
       <section id="contato" className="py-16 bg-white" data-testid="contact-section">
@@ -463,7 +441,7 @@ export default function Home() {
             <div>
               <form onSubmit={handleSubmit} className="space-y-6" data-testid="contact-form">
                 <div>
-                  <Label htmlFor="nome" className="block text-sm font-medium text-gray-700 mb-2">Nome Completo</Label>
+                  <Label htmlFor="nome" className="block text-sm font-medium text-gray-700 mb-2">Nome</Label>
                   <Input
                     type="text"
                     id="nome"
@@ -520,6 +498,19 @@ export default function Home() {
                 </div>
                 
                 <div>
+                  <Label htmlFor="empresa" className="block text-sm font-medium text-gray-700 mb-2">Empresa</Label>
+                  <Input
+                    type="text"
+                    id="empresa"
+                    value={formData.empresa}
+                    onChange={(e) => setFormData({ ...formData, empresa: e.target.value })}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy focus:border-transparent transition-all duration-300"
+                    data-testid="input-empresa"
+                  />
+                </div>
+                
+                <div>
                   <Label htmlFor="mensagem" className="block text-sm font-medium text-gray-700 mb-2">Mensagem</Label>
                   <Textarea
                     id="mensagem"
@@ -566,8 +557,11 @@ export default function Home() {
                   <div className="flex items-center">
                     <Phone className="w-5 h-5 text-navy mr-2" />
                     <div>
-                      <span className="font-medium text-gray-800">Telefone:</span>
-                      <span className="text-gray-600 ml-1">(11) 3917-0292</span>
+                      <span className="font-medium text-gray-800">Telefones:</span>
+                      <div className="text-gray-600 ml-1">
+                        <p>(11) 3917-2047</p>
+                        <p>(11) 94790-0330</p>
+                      </div>
                     </div>
                   </div>
                   

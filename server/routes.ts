@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactMessageSchema } from "@shared/schema";
+import { googleSheetsService } from "./google-sheets";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -9,11 +10,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/contact", async (req, res) => {
     try {
       const validatedData = insertContactMessageSchema.parse(req.body);
+      
+      // Salvar no Google Sheets
+      await googleSheetsService.addContactMessage(validatedData);
+      
+      // Também manter no storage local como backup
       const message = await storage.createContactMessage(validatedData);
       
       res.json({ 
         success: true, 
-        message: "Mensagem enviada com sucesso! Em breve entraremos em contato.",
+        message: "Obrigado! Nossa equipe entrará em contato em breve! Até logo ;)",
         id: message.id 
       });
     } catch (error) {
@@ -24,6 +30,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           errors: error.errors 
         });
       } else {
+        console.error('Erro ao processar contato:', error);
         res.status(500).json({ 
           success: false, 
           message: "Erro interno do servidor. Tente novamente mais tarde." 
@@ -33,11 +40,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Get contact messages (admin endpoint)
-  app.get("/api/contact", async (req, res) => {
+  app.get("/api/contatos", async (req, res) => {
     try {
-      const messages = await storage.getContactMessages();
+      const messages = await googleSheetsService.getContactMessages();
       res.json(messages);
     } catch (error) {
+      console.error('Erro ao buscar contatos:', error);
       res.status(500).json({ 
         success: false, 
         message: "Erro ao buscar mensagens." 

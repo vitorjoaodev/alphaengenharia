@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "modern-setting-466214-a3",
+  "private_key_id": "429c24a8e3f3e12115af863273cb26095c19f301",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCz0JchPI8kosJD\nmS4GWQqXQSr2T3zf6bJ+8AuA8hYlcw/vvLopuZG/zcwymK6wHQYiSebLyJ9KHfR1\n1OUnZ6XEYnRKhSUhxfCjMlLtUSIKDZsd2IAxT1WbcqmsHiNEitHqMiWKNSL99yTl\n7T2zDo/o3yqCzKLSfq0n8qOBhYH5xQ8lEXFQwxSOdU1/o9KQxqL632dAxOgxw2iF\nCIP9mS86UojNZOc1z2YbpPRDguXpeYDTF+hLcuCa7h4qWkFDCBb+t6d/XSQWxMUJ\np8dhYju3doZTUqR+3eQKr9L+ZAdpjacHI0hkGIw0vUKRxKMAvfFDDNVMfF04pfcn\n8jsHtfLrAgMBAAECggEASI1SXVO9AfA15+aHfoIw1sSxm/6IiSQXJEagrZ+ANg4O\nERIaHznDyBs2V/fpDCA52F3vJKxHMTWS7HRBHbwhU3LSLzs3tz/Rj1d/xEdnL507\nyDgRyVOUXAtQ0KS8YCyO9CrVoMU94DD3D1rA+V1XzYM1+N6ul7YLEcJCHMGMpwUh\nY+uLL3RW739MSRPf5OeRJwrRPS2eN9sE/tY4J+vb5loWmWjCqTE3c7t8DsbTgna2\ndpHtj1bU4rN3cBbk4VjnSO2L4RTqfKleB9zheQmSyIIxsT9V1mUgBdL4NtvzDZ9v\neBQfhj7gBDTbzPuTuFxIXEhmFAg4CIwlzAAg3AOOuQKBgQDjCCvQGciz1pUodWpp\nEX02Upo1EW0nkGAKdlThmmKrb3K2Sc0hqCp3vq3k91BRFW0KK4roSqhx6lzsZWia\nVfK6kmPNjlGAUTwCYy6osaEtRlaBcpdFaVk2t+2mFsThZNtM2KbLwyBsGEQ0k8fO\ntcE8dLkh7zNkW1kkg5rV2p+GJwKBgQDKwht5vpjOkBBvxnHTIYUZS9gbBJKXSX/6\nD8so4xn58xId26ZK9fDnJrFgYoYH0Z3WTVF1mRnuppKgOfeTxjwgzFtlFVoZsVc0\njCGln7i7eSQuFiIWkJYICWAEcGLsL96/1sJZqB6p7B3Rppd9ROrAFrmtzZ9xqLhA\ndFLHVRsLnQKBgBsA1s06s9+ID1evl4eFuAHlE0hqmTQSfQnhhzkKNuAzMk6yOn7d\nVKfHe0F3lQr/5GdIRI5aiux5trG7YhSxUlyUmuBRJCqB/wQ9rcgM0KHk8tcUvR9Z\nZ24VtGOD48j3SQo73qLvw4R34mzqguJ4RdKeA4Mgw1kVcGXibWEwTrcTAoGAYu/C\njm6Fi83aZ2BS7G4fz08l/VEG4tGXpAKO5L2kUEXeojkq9Mr7qR9FUD3jHu+W8Bo8\nVIDHmZ8oTwzaFP6XGn39Xt7DX2QcpGR4iqPcdYZQNDjSm2Yj/3nro17ftlZJgByg\nKzWQ+ONhTYrXwuWdEuxD4F5EniZw+eqI9gE+ODUCgYB2E7qlwyGsj+i4OdnHNCJs\nh8hvpZmZo5xxXtddSPMY84vVeK9Q2WqmoIH3DZwdh7n1Eewq6twKWtwvrWZLRe1O\nB0S9xuSvUwd2z0aO0ZqCHY/mjPqBCFjS37gF7NUKNuNLDatvfD5CRKM1IM08W1pd\nzi8R1nnuC7xDQbzcA1Ic2w==\n-----END PRIVATE KEY-----\n",
+  "client_email": "contato-de-clientes-do-site-al@modern-setting-466214-a3.iam.gserviceaccount.com",
+  "client_id": "104722944550779947213",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/contato-de-clientes-do-site-al%40modern-setting-466214-a3.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

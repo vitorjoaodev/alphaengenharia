@@ -15,6 +15,7 @@ export const contactMessages = pgTable("contact_messages", {
   email: text("email").notNull(),
   telefone: text("telefone").notNull(),
   assunto: text("assunto").notNull(),
+  empresa: text("empresa").notNull(),
   mensagem: text("mensagem").notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
@@ -29,6 +30,7 @@ export const insertContactMessageSchema = createInsertSchema(contactMessages).pi
   email: true,
   telefone: true,
   assunto: true,
+  empresa: true,
   mensagem: true,
 });
 
