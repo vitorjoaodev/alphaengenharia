@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luciane Engenharia - Excelência técnica em engenharia e arquitetura</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/heroicons/2.0.18/24/outline/heroicons.min.css">
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'navy': '#001F54',
+                    'silver': '#C0C0C0',
+                    'light-silver': '#E5E5E5'
+                },
+                fontFamily: {
+                    'sans': ['Inter', 'sans-serif']
+                }
+            }
+        }
+    };
+    </script>
+</head>
+<body class="font-sans bg-white text-gray-800 scroll-smooth">
+
+    <!-- @COMPONENT: FixedHeader -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50 border-b border-light-silver">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Logo Section -->
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center">
+                    <span class="text-white font-bold text-xl">L</span>
+                </div>
+                <div>
+                    <h1 class="text-navy font-bold text-lg">Luciane</h1>
+                    <p class="text-sm text-gray-600">ENGENHARIA</p>
+                </div>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-gray-700 hover:text-navy transition-colors duration-300 font-medium">Início</a>
+                <a href="#sobre" class="text-gray-700 hover:text-navy transition-colors duration-300 font-medium">Sobre</a>
+                <a href="#servicos" class="text-gray-700 hover:text-navy transition-colors duration-300 font-medium">Serviços</a>
+                <a href="#setores" class="text-gray-700 hover:text-navy transition-colors duration-300 font-medium">Setores</a>
+                <a href="#contato" class="text-gray-700 hover:text-navy transition-colors duration-300 font-medium">Contato</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden p-2" data-event="click:toggleMobileMenu">
+                <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="md:hidden bg-white border-t border-light-silver hidden" data-mobile-menu>
+            <nav class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="#inicio" class="text-gray-700 hover:text-navy transition-colors duration-300 font-medium">Início</a>
+                <a href="#sobre" class="text-gray-700 hover:text-navy transition-colors duration-300 font-medium">Sobre</a>
+                <a href="#servicos" class="text-gray-700 hover:text-navy transition-colors duration-300 font-medium">Serviços</a>
+                <a href="#setores" class="text-gray-700 hover:text-navy transition-colors duration-300 font-medium">Setores</a>
+                <a href="#contato" class="text-gray-700 hover:text-navy transition-colors duration-300 font-medium">Contato</a>
+            </nav>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: FixedHeader -->
+
+    <!-- @COMPONENT: HeroSection -->
+    <section id="inicio" class="pt-24 pb-16 bg-gradient-to-br from-white to-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <!-- Large Logo Display -->
+            <div class="flex justify-center mb-8">
+                <div class="w-32 h-32 bg-navy rounded-2xl flex items-center justify-center shadow-xl">
+                    <span class="text-white font-bold text-5xl">L</span>
+                </div>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-bold text-navy mb-4">
+                Luciane Engenharia
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Excelência técnica em engenharia e arquitetura
+            </p>
+            
+            <a href="#contato" class="inline-block bg-navy text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-silver hover:text-navy transition-all duration-300 shadow-lg">
+                Solicite um orçamento
+            </a>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- @COMPONENT: AboutSection -->
+    <section id="sobre" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">Sobre Nós</h2>
+                <div class="w-24 h-1 bg-silver mx-auto"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <p class="text-lg md:text-xl text-gray-700 leading-relaxed text-center">
+                    A Luciane Engenharia atua com projetos estruturais, arquitetura, franquias, indústrias e consultoria, oferecendo soluções completas com foco em qualidade, prazo e inovação. Nossa equipe garante excelência técnica em todas as etapas, do planejamento à execução.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AboutSection -->
+
+    <!-- @COMPONENT: ServicesSection -->
+    <section id="servicos" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">Nossos Serviços</h2>
+                <div class="w-24 h-1 bg-silver mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-navy rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-navy mb-2">Engenharia Civil</h3>
+                    <p class="text-gray-600">Estruturas, fundações, instalações prediais, supervisão de obras.</p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-navy rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-navy mb-2">Arquitetura</h3>
+                    <p class="text-gray-600">Projetos arquitetônicos, interiores, residenciais e paisagismo.</p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-navy rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-navy mb-2">Franquias</h3>
+                    <p class="text-gray-600">Padronização, fast food, retail.</p>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-navy rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-navy mb-2">Projetos Industriais</h3>
+                    <p class="text-gray-600">Plantas industriais, galpões, logística.</p>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-navy rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-navy mb-2">Consultoria</h3>
+                    <p class="text-gray-600">Avaliação técnica, viabilidade, otimização.</p>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-navy rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-navy mb-2">Gerenciamento</h3>
+                    <p class="text-gray-600">Planejamento, acompanhamento de obra, execução, controle de qualidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ServicesSection -->
+
+    <!-- @COMPONENT: SectorsSection -->
+    <section id="setores" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">Setores Atendidos</h2>
+                <div class="w-24 h-1 bg-silver mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Sector 1 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-silver rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-navy mb-2">Construtoras e Grandes Obras</h3>
+                </div>
+
+                <!-- Sector 2 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-silver rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-navy mb-2">Varejo e Redes Nacionais</h3>
+                </div>
+
+                <!-- Sector 3 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-silver rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-navy mb-2">Saúde (Hospitais e Clínicas)</h3>
+                </div>
+
+                <!-- Sector 4 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-silver rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-navy mb-2">Indústrias (Diversos Setores)</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: SectorsSection -->
+
+    <!-- @COMPONENT: ProjectsSection -->
+    <section id="projetos" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">Nossos Projetos</h2>
+                <div class="w-24 h-1 bg-silver mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <!-- Modern residential building with glass facades and clean architecture -->
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500" alt="Projeto Residencial" class="w-full h-48 object-cover" data-mock-image="true">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-navy mb-2">Residencial</h3>
+                        <p class="text-gray-600">Projetos residenciais com arquitetura moderna e sustentável.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <!-- Modern commercial building with large windows and contemporary design -->
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500" alt="Projeto Comercial" class="w-full h-48 object-cover" data-mock-image="true">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-navy mb-2">Comercial</h3>
+                        <p class="text-gray-600">Soluções comerciais inovadoras para diversos segmentos.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <!-- Industrial facility with large metal structures and functional design -->
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500" alt="Projeto Industrial" class="w-full h-48 object-cover" data-mock-image="true">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-navy mb-2">Industrial</h3>
+                        <p class="text-gray-600">Projetos industriais focados em eficiência e funcionalidade.</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <!-- Modern retail space or franchise interior with clean design -->
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500" alt="Projeto Franquias" class="w-full h-48 object-cover" data-mock-image="true">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-navy mb-2">Franquias</h3>
+                        <p class="text-gray-600">Padronização e projetos para redes de franquias.</p>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <!-- Modern office building or corporate headquarters -->
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500" alt="Projeto Corporativo" class="w-full h-48 object-cover" data-mock-image="true">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-navy mb-2">Corporativo</h3>
+                        <p class="text-gray-600">Espaços corporativos modernos e funcionais.</p>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <!-- Hospital or healthcare facility with modern architecture -->
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500" alt="Projeto Saúde" class="w-full h-48 object-cover" data-mock-image="true">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-navy mb-2">Saúde</h3>
+                        <p class="text-gray-600">Projetos especializados para hospitais e clínicas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ProjectsSection -->
+
+    <!-- @COMPONENT: ContactSection -->
+    <section id="contato" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">Entre em Contato</h2>
+                <div class="w-24 h-1 bg-silver mx-auto"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div>
+                    <form class="space-y-6" data-event="submit:handleFormSubmit">
+                        <div>
+                            <label for="nome" class="block text-sm font-medium text-gray-700 mb-2">Nome Completo</label>
+                            <input type="text" id="nome" name="nome" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy focus:border-transparent transition-all duration-300" data-mock="true">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">E-mail</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy focus:border-transparent transition-all duration-300" data-mock="true">
+                        </div>
+                        
+                        <div>
+                            <label for="telefone" class="block text-sm font-medium text-gray-700 mb-2">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy focus:border-transparent transition-all duration-300" data-mock="true">
+                        </div>
+                        
+                        <div>
+                            <label for="assunto" class="block text-sm font-medium text-gray-700 mb-2">Assunto</label>
+                            <select id="assunto" name="assunto" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy focus:border-transparent transition-all duration-300" data-mock="true">
+                                <option value="">Selecione um assunto</option>
+                                <option value="engenharia-civil">Engenharia Civil</option>
+                                <option value="arquitetura">Arquitetura</option>
+                                <option value="franquias">Franquias</option>
+                                <option value="projetos-industriais">Projetos Industriais</option>
+                                <option value="consultoria">Consultoria</option>
+                                <option value="gerenciamento">Gerenciamento</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="mensagem" class="block text-sm font-medium text-gray-700 mb-2">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy focus:border-transparent transition-all duration-300" data-mock="true"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-navy text-white py-3 px-6 rounded-lg font-semibold hover:bg-silver hover:text-navy transition-all duration-300 shadow-lg">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-navy mb-6">Informações de Contato</h3>
+                        
+                        <div class="space-y-4">
+                            <!-- Email Section -->
+                            <div>
+                                <h4 class="font-medium text-gray-800 mb-2 flex items-center">
+                                    <svg class="w-5 h-5 text-navy mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                    E-mails
+                                </h4>
+                                <div class="text-gray-600 ml-7 space-y-1">
+                                    <p><strong>Administração:</strong> administracao@lucianeengenharia.com</p>
+                                    <p><strong>Recursos Humanos:</strong> rh@lucianeengenharia.com</p>
+                                    <p><strong>Obras:</strong> lucianerodrigues.obras@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Phone -->
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 text-navy mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                                <div>
+                                    <span class="font-medium text-gray-800">Telefone:</span>
+                                    <span class="text-gray-600 ml-1">(11) 3917-0292</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Address -->
+                            <div>
+                                <div class="flex items-start">
+                                    <svg class="w-5 h-5 text-navy mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <div>
+                                        <span class="font-medium text-gray-800">Endereço:</span>
+                                        <p class="text-gray-600 ml-1">Av. Imperatriz Leopoldina, 845 - Vila Leopoldina<br>São Paulo - SP, 05305-011</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Business Hours -->
+                            <div>
+                                <div class="flex items-start">
+                                    <svg class="w-5 h-5 text-navy mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <div>
+                                        <span class="font-medium text-gray-800">Horário de Atendimento:</span>
+                                        <div class="text-gray-600 ml-1">
+                                            <p>Segunda a Sexta: 08:00 - 18:00</p>
+                                            <p>Sábado: 08:00 - 12:00</p>
+                                            <p>Domingo: Fechado</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-navy text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Logo and Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                            <span class="text-navy font-bold text-lg">L</span>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold">Luciane</h3>
+                            <p class="text-sm text-silver">ENGENHARIA</p>
+                        </div>
+                    </div>
+                    <p class="text-silver text-sm">
+                        © 2025 Luciane Engenharia. Todos os direitos reservados.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Links Rápidos</h4>
+                    <nav class="space-y-2">
+                        <a href="#inicio" class="text-silver hover:text-white transition-colors duration-300 block">Início</a>
+                        <a href="#sobre" class="text-silver hover:text-white transition-colors duration-300 block">Sobre</a>
+                        <a href="#servicos" class="text-silver hover:text-white transition-colors duration-300 block">Serviços</a>
+                        <a href="#setores" class="text-silver hover:text-white transition-colors duration-300 block">Setores</a>
+                        <a href="#contato" class="text-silver hover:text-white transition-colors duration-300 block">Contato</a>
+                    </nav>
+                </div>
+                
+                <!-- Social Media -->
+                <div>
+                    <h4 class="font-semibold mb-4">Redes Sociais</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-silver rounded-full flex items-center justify-center text-navy hover:bg-white transition-colors duration-300" data-event="click:openLinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-silver rounded-full flex items-center justify-center text-navy hover:bg-white transition-colors duration-300" data-event="click:openInstagram">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987s11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.329-1.297L6.826 14.08c.555.555 1.329.902 2.134.902 1.715 0 3.105-1.39 3.105-3.105S10.675 8.772 8.96 8.772s-3.105 1.39-3.105 3.105c0 .805.347 1.579.902 2.134L5.151 15.69c-.807-.88-1.297-2.031-1.297-3.328 0-2.716 2.201-4.917 4.917-4.917s4.917 2.201 4.917 4.917-2.201 4.917-4.917 4.917zm9.429-8.896h-1.34v-1.34h1.34v1.34zm-1.34 2.68c0 2.716-2.201 4.917-4.917 4.917s-4.917-2.201-4.917-4.917 2.201-4.917 4.917-4.917 4.917 2.201 4.917 4.917z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- Fixed WhatsApp Button -->
+    <a href="https://wa.me/5511939170292?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Luciane%20Engenharia" 
+       target="_blank" 
+       class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300 z-50"
+       data-event="click:openWhatsApp">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+        </svg>
+    </a>
+
+    <script>
+        // TODO: Implement business logic, API calls, or state management
+        (function() {
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('[data-event="click:toggleMobileMenu"]');
+            const mobileMenu = document.querySelector('[data-mobile-menu]');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+            
+            // Form submission handler
+            const form = document.querySelector('[data-event="submit:handleFormSubmit"]');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement form validation and submission logic
+                    alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
+                });
+            }
+            
+            // Smooth scrolling for navigation links
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                    
+                    // Close mobile menu if open
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
